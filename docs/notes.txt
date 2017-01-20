@@ -1,0 +1,44 @@
+Refaktorering, införande av test.
+
+- komplexa funktioner som kan brytas isär
+- variabelnamn som är otydliga
+- komplexa if-satser
+- try catch som inte loggar
+- funktioner som gör många saker
+- vänd på equals
+- utkommenterad kod
+- onödiga kommentarer
+- argument till metoder
+- verktygsmetoder
+- magic numbers
+
+
+Testning
+
+- Skriv testet innan implementationen. 
+- Vad ska testas
+    - Testa inte get/set och sånt som ide skapar upp. 
+    - Vad ska det göra
+    - Vad ska hända om något går fel
+- Testerna ska ses som kravspecen på hur applikationen funkar
+- Länka test till issues
+
+
+Kapitel 1:
+Titta på koden. 
+
+Kapitel 2:
+Action: Lägg till jacococ och sonarqube
+
+Kapitel 3:
+Byggserver
+git hook efter commit
+
+Kapitel 4:
+Action: Refaktorisera <någonting>
+Titta: Resultat
+
+Kapitel 5: 
+
+
+
