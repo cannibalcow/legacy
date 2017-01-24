@@ -1,3 +1,8 @@
+csv importer
+- Regler för fälten
+    - Börja med att bryta ut i metoder
+    - Abstrahera
+
 Refaktorering, införande av test.
 
 - komplexa funktioner som kan brytas isär
@@ -11,13 +16,14 @@ Refaktorering, införande av test.
 - argument till metoder
 - verktygsmetoder
 - magic numbers
+- Objekt istället för strängar etc. Nyckel istället för sträng.tex.
 
 
 Testning
 
-- Skriv testet innan implementationen. 
+- Skriv testet innan implementationen.
 - Vad ska testas
-    - Testa inte get/set och sånt som ide skapar upp. 
+    - Testa inte get/set och sånt som ide skapar upp.
     - Vad ska det göra
     - Vad ska hända om något går fel
 - Testerna ska ses som kravspecen på hur applikationen funkar
@@ -25,7 +31,7 @@ Testning
 
 
 Kapitel 1:
-Titta på koden. 
+Titta på koden.
 
 Kapitel 2:
 Action: Lägg till jacococ och sonarqube
@@ -38,7 +44,7 @@ Kapitel 4:
 Action: Refaktorisera <någonting>
 Titta: Resultat
 
-Kapitel 5: 
+Kapitel 5:
 
 
 
