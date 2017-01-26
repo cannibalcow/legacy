@@ -25,7 +25,18 @@ public class Legacy {
             String[] cls = str.split(";");
             //valid email
             Pattern pattern = Pattern.compile("^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$");
+            /**
 
+             SPARA TILL SEN!!!
+
+
+             Pattern pattern = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
+
+             if (!match.matches()) {
+             System.out.println(cls[3]); // bort
+                        throw new Exception("FEL MAIL");
+             }
+             */
             Matcher match = pattern.matcher(cls[3]);
 
             if (!match.matches()) {
