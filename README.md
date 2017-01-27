@@ -3,7 +3,11 @@
 ## Krav
 Programet ska
   - Validera fälten
-  - Filtrera ut minderåriga
+    - Korrekt email
+    - Korrekt personnummer
+    - Efternamn får vara null om förnamn börjar på 'A', 'B', 'F'
+  - Filtrera ut minderåriga från 1600 talet
+  - Skriv ut resultatet
 
 ## CSV Filen
 Filen har fyra kolumner med data. Förnamn, efternamn, personnummer och epost
