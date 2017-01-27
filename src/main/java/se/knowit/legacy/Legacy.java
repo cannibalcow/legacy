@@ -1,4 +1,4 @@
-package se.knowit.legay;
+package se.knowit.legacy;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 public class Legacy {
 
     public static void main(String[] args) {
-        System.out.println("start");
+        System.out.println("Reading file: " + args[0]);
         int cent = 1600;
         File file = new File(args[0]);
         BufferedReader br = null;
@@ -49,27 +49,33 @@ public class Legacy {
                 Matcher match = pattern.matcher(cls[3]);
 
                 if (!match.matches()) {
-                    System.out.println(cls[3]); // bort
-                    System.out.println("Fel i epost");
+                    System.out.println("Felaktig epost");
                     throw new RadFel("FEL");
                 }
 
                 Personnummer pv = new Personnummer();
-                if(pv.validPersonnummer(cls[2])) {
+                if(pv.validera(cls[2])) {
                     System.out.println("fel personnummer");
                 }
 
                 if(cls[0].equals('A') || cls[0].equals('B') || cls[0].equals('F') || cls[0].equals('D')) {
                     if(cls[1].equals("") || cls[1] == null) {
-                        int a = new Integer(cls[3].substring(0, 3)) - cent;
-                        if(a <= 18) {
+                        int a = new Integer(cls[1].substring(0, 4)) - 1600;
+                        System.out.println("YEAR: " +new Integer(cls[2].substring(0, 4)));
+                        System.out.println("AGE: " + a);
+                        if(a > 18) {
+                        } else {
                             rs.add(cls[0] + ";" + cls[1] + ";" + cls[2] + ";" + cls[3]);
                         }
                     }
+                    "  ".split(" ");
                 } else {
                     if(!cls[1].equals("") || cls[1] != null) {
-                        int a = new Integer(cls[3].substring(0, 3)) - cent;
-                        if(a <= 18) {
+                        int a = new Integer(cls[2].substring(0, 4)) - 1600;
+                        System.out.println("YEAR: " +new Integer(cls[2].substring(0, 4)));
+                        System.out.println("AGE: " + a);
+                        if(a > 18) {
+                        } else {
                             rs.add(cls[0] + ";" + cls[1] + ";" + cls[2] + ";" + cls[3]);
                         }
                     }
@@ -77,9 +83,10 @@ public class Legacy {
             }
         } catch (IOException e) {
         } catch (RadFel radFel) {
-            radFel.printStackTrace();
+//            radFel.printStackTrace();
         }
 
+        System.out.println("\n\nRESULTAT");
         for(int i  = 0; i < rs.size(); i++ ) {
             System.out.println(rs.get(i));
         }

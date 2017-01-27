@@ -30,14 +30,36 @@ Testning
 - Länka test till issues
 
 
-Kapitel 1:
+Kapitel 1: Överblicken
 Titta på koden.
+    - Vad är programmets syfte
+    - Ser vi några mönster. Tydliga delar som kan brytas isär.
+      t.ex läsa in fil, validera data, skriva ut data
 
-Kapitel 2:
-Action: Lägg till jacococ och sonarqube
+Vad jag visa
+    - Lägg till jacoco och sonarqube, sonarqube
+
+Kapitel 2: Överblicksverktygen
+    - jacoco java code coverage. För att mäta testtäckningen.
+    - sonarqube för att se all skuld och ett mätverktyg att det vi gör blir bättre
+
+Vad ska jag visa:
+    - Hur man lägger till jacoco och sonarqube
+
+Kapitel 3: Systemtester
+    - Vid legacy är det bra att sätta upp några grundläggande systemtester
+      så att du kan se att applikationen beter sig lika vid refaktorering
+
+Vad ska jag visa:
+    - Hur jag sätter upp cucumber
+
+Kapitel 4: Enhetstester
+    - Skapa ett enkelt enhetstest
 
 Kapitel 3:
 Byggserver
+    - CD
+    - commit, bygg en version.
 git hook efter commit
 
 Kapitel 4:

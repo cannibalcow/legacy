@@ -1,21 +1,23 @@
-package se.knowit.legay;
+package se.knowit.legacy;
 
 public class Personnummer {
 
-    public boolean validPersonnummer(String personnummer) {
+    public boolean validera(String personnummer) {
+        System.out.println(personnummer);
         if (personnummer.contains("-")) {
             if (personnummer.startsWith("1") || personnummer.startsWith("2")) {
-                if (personnummer.substring(1, 2).startsWith("1") ||
-                        personnummer.substring(1, 2).startsWith("2") ||
-                        personnummer.substring(1, 2).startsWith("3") ||
-                        personnummer.substring(1, 2).startsWith("4") ||
-                        personnummer.substring(1, 2).startsWith("5") ||
-                        personnummer.substring(1, 2).startsWith("6") ||
-                        personnummer.substring(1, 2).startsWith("7") || personnummer.substring(1, 2).startsWith("8") ||
-                personnummer.substring(1, 2).startsWith("9")){
-
-                    if (new Integer(personnummer.split("-")[1]) > 0) {
-                        return true;
+                if (personnummer.charAt(4) == '0' || personnummer.charAt(4) == '1') {
+                    if (personnummer.charAt(5) == '1' || personnummer.charAt(5) == '2' || personnummer.charAt(5) == '3') {
+                        Integer d = new Integer(personnummer.substring(7, 8));
+                        if (d > 0 && d < 32) {
+                            if (new Integer(personnummer.split("-")[1]) > 0) {
+                                return true;
+                            } else {
+                                return false;
+                            }
+                        } else {
+                            return false;
+                        }
                     } else {
                         return false;
                     }
