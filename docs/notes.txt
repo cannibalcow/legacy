@@ -30,14 +30,17 @@ Testning
 - Länka test till issues
 
 
-Kapitel 1: Överblicken
+- Kapitel 1: Överblicken
 Titta på koden.
     - Vad är programmets syfte
     - Ser vi några mönster. Tydliga delar som kan brytas isär.
       t.ex läsa in fil, validera data, skriva ut data
 
 Vad jag visa
+    - Jacoco kräver ett test
+      mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Dmaven.test.failure.ignore=true -Dsonar.jacoco.reportMissing.force.zero=true
     - Lägg till jacoco och sonarqube, sonarqube
+      mvn sonar:sonar -Psonarqube
 
 Kapitel 2: Överblicksverktygen
     - jacoco java code coverage. För att mäta testtäckningen.

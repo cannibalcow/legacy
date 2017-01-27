@@ -21,3 +21,8 @@ Filen har fyra kolumner med data. Förnamn, efternamn, personnummer och epost
     
     java -jar legacy.jar /tmp/fil
     
+
+## Verktyg
+### Sonarqube
+ - https://sonarsource.bintray.com/
+ - https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-6.2.zip

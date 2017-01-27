@@ -16,6 +16,9 @@
         </dependency>
     </dependencies>
 
+    <properties>
+        <jacoco.version>0.7.7.201606060606</jacoco.version>
+    </properties>
 
     <build>
         <plugins>
@@ -43,6 +46,41 @@
                     </archive>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
+                <executions>
+                    <execution>
+                        <id>jacoco-initialize</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>jacoco-site</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>sonarqube</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+                <sonar.host.url>http://localhost:9000</sonar.host.url>
+                <sonar.projectDescription>Legacy</sonar.projectDescription>
+            </properties>
+        </profile>
+    </profiles>
 </project>
