@@ -2,6 +2,8 @@ package se.knowit.legacy;
 
 public class Personnummer {
 
+    private String personnummer;
+
     public boolean validera(String personnummer) {
         System.out.println(personnummer);
         if (personnummer.contains("-")) {
@@ -30,5 +32,13 @@ public class Personnummer {
         } else {
             return false;
         }
+    }
+
+    public void setPersonnummer(String personnummer) {
+        this.personnummer = personnummer;
+    }
+
+    public String getPersonnummer() {
+        return personnummer;
     }
 }

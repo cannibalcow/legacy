@@ -19,6 +19,9 @@ Refaktorering, införande av test.
 - Objekt istället för strängar etc. Nyckel istället för sträng.tex.
 
 
+Läs in fil -> Mappa till objekt -> Kör regel på alla objekt -> filtrera ut data
+Parser -> Object Mapper -> RuleEngine -> Service
+
 Testning
 
 - Skriv testet innan implementationen.
@@ -63,7 +66,7 @@ Kapitel 3:
 Byggserver
     - CD
     - commit, bygg en version.
-git hook efter commit
+    - Byggen byggserver med bash.
 
 Kapitel 4:
 Action: Refaktorisera <någonting>
@@ -71,5 +74,6 @@ Titta: Resultat
 
 Kapitel 5:
 
-
+Kapitel X:
+Loggning istället för system.out
 
