@@ -72,4 +72,6 @@ Titta: Resultat
 Kapitel 5:
 
 
-
+--
+    mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Dmaven.test.failure.ignore=true -Dsonar.jacoco.reportMissing.force.zero=true
+    mvn sonar:sonar -Psonarqube
