@@ -69,8 +69,8 @@ Byggserver
     - Byggen byggserver med bash.
 
 Kapitel 4:
-Action: Refaktorisera <någonting>
-Titta: Resultat
+Action: Refaktorisera
+Skapa nytt parsingssytem
 
 Kapitel 5:
 

@@ -13,12 +13,14 @@ public class CSVFileParser implements CSVParser {
     @Override
     public List<CSVRow> parse(File file, String delimiter) throws CSVParseException {
         if (!file.exists()) {
-            throw new CSVParseException("filen hittades inte");
+            throw new CSVParseException(String.format("filen hittades inte: %s", file.getAbsolutePath()));
         }
 
-        List<CSVRow> rader = new ArrayList<>();
+        List<CSVRow> rows = new ArrayList<>();
+        FileReader fileReader;
         try {
-            BufferedReader br = new BufferedReader(new FileReader(file));
+            fileReader= new FileReader(file);
+            BufferedReader br = new BufferedReader(fileReader);
             String rad;
             boolean first = true;
 
@@ -27,7 +29,7 @@ public class CSVFileParser implements CSVParser {
                     first = false;
                     continue;
                 }
-                rader.add(mapRad(rad, delimiter));
+                rows.add(mapRad(rad, delimiter));
             }
 
             br.close();
@@ -35,7 +37,7 @@ public class CSVFileParser implements CSVParser {
             throw new CSVParseException(e);
         }
 
-        return rader;
+        return rows;
     }
 
     protected CSVRow mapRad(String rad, String delimiter) {

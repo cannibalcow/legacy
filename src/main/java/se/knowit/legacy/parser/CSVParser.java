@@ -8,7 +8,7 @@ import java.util.List;
  */
 public interface CSVParser {
     /**
-     * Läser in csv fil och mappar till objekt
+     * Reads a csv file and maps it to the CSVRow object
      * @param file
      * @return
      */
