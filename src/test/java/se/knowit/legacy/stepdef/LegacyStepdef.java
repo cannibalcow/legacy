@@ -57,17 +57,10 @@ public class LegacyStepdef {
         // OH NOES!! System.out evil caputre device sucking soul out of developer
         ByteArrayOutputStream resultOutput = new ByteArrayOutputStream();
         PrintStream ps = new PrintStream(resultOutput);
-        PrintStream old = System.out;
         System.setOut(ps);
 
         // Kör legacy
         Legacy.main(new String[]{filPath});
-
-        System.out.flush();
-        System.setOut(old);
-
-        System.out.println("-----");
-        System.out.println(resultOutput);
 
         assertThat(resultOutput.toString().contains("RESULTAT\nDaniel;Heldt;16100930-1234;daniel@email.com"), is(true));
     }
