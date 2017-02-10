@@ -19,6 +19,9 @@ Refaktorering, införande av test.
 - Objekt istället för strängar etc. Nyckel istället för sträng.tex.
 
 
+Läs in fil -> Mappa till objekt -> Kör regel på alla objekt -> filtrera ut data
+Parser -> Object Mapper -> RuleEngine -> Service
+
 Testning
 
 - Skriv testet innan implementationen.
@@ -63,15 +66,16 @@ Kapitel 3:
 Byggserver
     - CD
     - commit, bygg en version.
-git hook efter commit
+    - Byggen byggserver med bash.
 
 Kapitel 4:
-Action: Refaktorisera <någonting>
-Titta: Resultat
+Action: Refaktorisera
+Skapa nytt parsingssytem
 
 Kapitel 5:
+Action: Refaktorisera validering
+Skapa ett regelsystem
 
+Kapitel X:
+Loggning istället för system.out
 
---
-    mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Dmaven.test.failure.ignore=true -Dsonar.jacoco.reportMissing.force.zero=true
-    mvn sonar:sonar -Psonarqube
