@@ -15,12 +15,12 @@ public class EmailRule extends Rule<CSVRow> {
     private Pattern pattern = Pattern.compile("^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$");
 
     @Override
-    String getRuleName() {
+    public String getRuleName() {
         return EMAIL_RULE_NAME;
     }
 
     @Override
-    boolean execute(CSVRow value) {
+    public boolean execute(CSVRow value) {
         if(value.getEmail() == null) {
             return false;
         }
