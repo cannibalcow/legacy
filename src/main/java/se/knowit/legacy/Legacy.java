@@ -1,5 +1,7 @@
 package se.knowit.legacy;
 
+import se.knowit.legacy.rules.EmailRule;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,7 @@ public class Legacy {
         int first = 0;
 
         List<String> rs = new ArrayList<>();
+
 
         try {
             while ((str = br.readLine()) != null) {

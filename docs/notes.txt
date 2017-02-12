@@ -74,8 +74,16 @@ Skapa nytt parsingssytem
 
 Kapitel 5:
 Action: Refaktorisera validering
-Skapa ett regelsystem
+- Skapa ett regelsystem for epost
+Kapitel 5.1
+ - personnummer
+Kapitel 5.2
+ - Weird krav grej
+Kapitel 5.2
+ - Regelmotor
 
+Kapitel 6
+Sy ihop det med ny parser och regelmotor
 Kapitel X:
 Loggning istället för system.out
 
