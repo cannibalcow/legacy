@@ -15,6 +15,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -62,7 +63,17 @@ public class LegacyStepdef {
         // Kör legacy
         Legacy.main(new String[]{filPath});
 
-        assertThat(resultOutput.toString().contains("RESULTAT\nDaniel;Heldt;16100930-1234;daniel@email.com"), is(true));
+        List<Map<String, String>> rows = dataTable.asMaps(String.class, String.class);
+
+        String result = "RESULTAT\n";
+        for( Map<String, String> row : rows) {
+            result.concat(String.format("%s;%s;%s;%s\n", row.get("firstname"), row.get("lastname"),
+                    row.get("personnummer"), row.get("email")));
+        }
+
+        String output = resultOutput.toString();
+
+        assertThat(resultOutput.toString().contains(result), is(true));
     }
 
     public String toCsvString(String delimiter, String... cols) {
