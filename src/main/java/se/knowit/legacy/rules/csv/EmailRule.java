@@ -1,14 +1,15 @@
-package se.knowit.legacy.rules;
+package se.knowit.legacy.rules.csv;
 
 
 import se.knowit.legacy.parser.CSVRow;
+import se.knowit.legacy.rules.Rule;
+import se.knowit.legacy.rules.RuleResult;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
  * Validates email on @CSVRow
- *
  */
 public class EmailRule extends Rule<CSVRow> {
     private static final String EMAIL_RULE_NAME = "Email rule";
@@ -20,13 +21,17 @@ public class EmailRule extends Rule<CSVRow> {
     }
 
     @Override
-    public boolean execute(CSVRow value) {
+    public RuleResult execute(CSVRow value) {
         if(value.getEmail() == null) {
-            return false;
+            return RuleResult.fail("Email is null");
         }
 
         Matcher matcher = pattern.matcher(value.getEmail());
 
-        return matcher.matches();
+        if(matcher.matches()) {
+            return RuleResult.success();
+        } else {
+            return RuleResult.fail(String.format("Email did not match rule: %s", value.getEmail()));
+        }
     }
 }

@@ -77,6 +77,7 @@ Action: Refaktorisera validering
 - Skapa ett regelsystem for epost
 Kapitel 5.1
  - personnummer
+ - Rule result!
 Kapitel 5.2
  - Weird krav grej
 Kapitel 5.2

@@ -1,7 +1,5 @@
 package se.knowit.legacy;
 
-import se.knowit.legacy.rules.EmailRule;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
