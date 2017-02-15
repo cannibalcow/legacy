@@ -45,11 +45,35 @@ public class WeirdRuleTest {
 
     @Test
     public void isWeridoRuleOk() throws Exception {
-        assertThat(rule.isWeridoRuleOk("Bengt", null).isSuccess(), is(true));
-        assertThat(rule.isWeridoRuleOk("Fredrik", null).isSuccess(), is(true));
-        assertThat(rule.isWeridoRuleOk("Apa", null).isSuccess(), is(true));
-        assertThat(rule.isWeridoRuleOk("Prips", null).isSuccess(), is(false));
-        assertThat(rule.isWeridoRuleOk("Apa", "Balong").isSuccess(), is(true));
+
+        CSVRow row = testRow();
+        row.setFirstname("Bengt");
+        row.setLastname(null);
+        assertThat(rule.isWeridoRuleOk(row).isSuccess(), is(true));
+
+        row.setFirstname("Fredrik");
+        row.setLastname(null);
+        assertThat(rule.isWeridoRuleOk(row).isSuccess(), is(true));
+
+        row.setFirstname("Apa");
+        row.setLastname(null);
+        assertThat(rule.isWeridoRuleOk(row).isSuccess(), is(true));
+
+        row.setFirstname("Pripps");
+        row.setLastname(null);
+        assertThat(rule.isWeridoRuleOk(row).isSuccess(), is(false));
+
+        row.setFirstname("Apa");
+        row.setLastname("Balong");
+        assertThat(rule.isWeridoRuleOk(row).isSuccess(), is(true));
+    }
+
+    private CSVRow testRow() {
+        Personnummer persnr = new Personnummer();
+        persnr.setPersonnummer("19820930-1234");
+
+        CSVRow row = new CSVRow("daniel", "heldt", persnr, "fake@email.com");
+        return row;
     }
 
 

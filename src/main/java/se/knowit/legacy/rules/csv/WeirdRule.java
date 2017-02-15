@@ -22,20 +22,20 @@ public class WeirdRule extends Rule<CSVRow> {
             return RuleResult.fail("Required field 'firstname' is null");
         }
 
-
-        return isWeridoRuleOk(value.getFirstname(), value.getLastname());
+        return isWeridoRuleOk(value);
     }
 
-    protected RuleResult isWeridoRuleOk(String firstname, String lastname) {
-        if(lastname != null) {
+    protected RuleResult isWeridoRuleOk(CSVRow csvRow) {
+
+        if(csvRow.getLastname() != null) {
             return RuleResult.success();
         }
 
-        char initChar = firstname.toUpperCase().charAt(0);
+        char initChar = csvRow.getFirstname().toUpperCase().charAt(0);
         if('A' == initChar || 'B' == initChar || 'F' == initChar) {
             return RuleResult.success();
         } else {
-            return RuleResult.fail(String.format("Weirdo rule does not match on: firstname: %s & lastname: %s", firstname, lastname));
+            return RuleResult.fail(String.format("Weirdo rule does not match on: firstname: %s & lastname: %s", csvRow.getFirstname(), csvRow.getLastname()), csvRow.toCsv());
         }
     }
 }

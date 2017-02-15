@@ -29,7 +29,7 @@ public class PersonnummerRule extends Rule<CSVRow> {
         if(match) {
             return RuleResult.success();
         } else {
-            return RuleResult.fail(String.format("Personnummer is not valid: %s", personnummer.getPersonnummer()));
+            return RuleResult.fail(String.format("Personnummer is not valid: %s", personnummer.getPersonnummer()), value.toCsv());
         }
     }
 }

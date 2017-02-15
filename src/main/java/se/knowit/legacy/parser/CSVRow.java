@@ -15,6 +15,9 @@ public class CSVRow {
         this.email = email;
     }
 
+    public CSVRow() {
+    }
+
     public String getFirstname() {
         return firstname;
     }
@@ -55,5 +58,9 @@ public class CSVRow {
                 ", personnummer=" + personnummer +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    public String toCsv() {
+        return String.format("%s;%s;%s;%s", this.firstname, this.lastname, this.personnummer.getPersonnummer(), this.getEmail());
     }
 }

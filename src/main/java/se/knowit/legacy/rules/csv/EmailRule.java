@@ -31,7 +31,7 @@ public class EmailRule extends Rule<CSVRow> {
         if(matcher.matches()) {
             return RuleResult.success();
         } else {
-            return RuleResult.fail(String.format("Email did not match rule: %s", value.getEmail()));
+            return RuleResult.fail("Email did not match rule: "+ value.getEmail(), value.toCsv());
         }
     }
 }

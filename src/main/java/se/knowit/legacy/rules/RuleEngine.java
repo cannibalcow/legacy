@@ -13,4 +13,5 @@ public class RuleEngine<T> {
     public List<RuleResult> runOn(T object) {
         return rules.stream().map(tRule -> tRule.execute(object)).collect(Collectors.toList());
     }
+
 }
