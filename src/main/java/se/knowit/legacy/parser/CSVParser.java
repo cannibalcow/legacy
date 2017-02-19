@@ -9,7 +9,7 @@ import java.util.List;
 public interface CSVParser {
     /**
      * Reads a csv file and maps it to the CSVRow object
-     * @param file
+     * @param path
      * @return
      */
     List<CSVRow> parse(Path path, String delimiter) throws CSVParseException;

@@ -8,6 +8,7 @@ import se.knowit.legacy.rules.csv.EmailRule;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -46,7 +47,7 @@ public class RuleToolsTest {
         PrintStream ps = new PrintStream(resultOutput);
         System.setOut(ps);
 
-        List<List<RuleResult>> rr = Arrays.asList(Arrays.asList(ruleResult));
+        List<List<RuleResult>> rr = Collections.singletonList(Collections.singletonList(ruleResult));
         RuleTools.printRuleSummery(rr);
 
         String output = resultOutput.toString();

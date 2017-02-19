@@ -71,8 +71,6 @@ public class LegacyStepdef {
                     row.get("personnummer"), row.get("email")));
         }
 
-        String output = resultOutput.toString();
-
         assertThat(resultOutput.toString().contains(result), is(true));
     }
 
