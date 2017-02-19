@@ -73,6 +73,7 @@ Action: Refaktorisera
 Skapa nytt parsingssytem
 
 Kapitel 5:
+- Email
 Action: Refaktorisera validering
 - Skapa ett regelsystem for epost
 Kapitel 5.1
@@ -80,7 +81,7 @@ Kapitel 5.1
  - Rule result!
 Kapitel 5.2
  - Weird krav grej
-Kapitel 5.2
+Kapitel 5.3
  - Regelmotor
 
 Kapitel 6

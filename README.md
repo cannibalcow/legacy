@@ -44,7 +44,7 @@ så länge." osv.
    - T.ex läsa in fil, validera data, skriva ut data
 
 # 2. Överblickverktyg
-Som utvecklare vill jag se ett par saker
+Som utvecklare vill jag uppnå ett par saker
 
 Jag vill ...
 - se vart jag har brister i min kod
@@ -60,4 +60,61 @@ Verktyget analyserar all kod i projektet och skapar en rapport som visar
 hur många % av koden som är testad.
 
 ## Kodgranskning
-Sonarqube (https://www.sonarqube.org/)
+När det kommer till kodgranskning så finns det det en mjukvara som heter
+Sonarqube (https://www.sonarqube.org/). Den analyserar kodbasen mot
+ett flertal regler. Dessa regler tittar efter buggar, bestpractice och andra typer
+av mätvärden som kan finnas i kod. T.ex komplexitet i metoder och klasser.
+Sonarqube sätter en stämpel på kodkvaliteten och visar hur kvalitéten utvecklas.
+
+# 3. Systemtester
+När du ska angripa ett legacysystem så rekomenderar jag inte att börja skriva
+enhetstester för alla klasser. Det är ett lönlöst arbete som bara tar tid och kan visa
+sig skapa mer problem. Eftersom testerna inte är skrivna på en gång så vet du
+inte vad kraven för koden är. Att skriva testerna i efterhand ger då inget.
+
+Det som du kan göra är att sätta upp systemtester som beskrivre scenarion
+där du vet utfallet. Du vet t.ex att om du mattar in en fil av en viss typ
+så kommer det ut ett förväntat resultat.
+
+Dessa tester är väldigt bra att ha när du refaktoriserar koden och börjar
+röra om i grytan. Ett litet kvitto som säger att grejerna håller ihop och
+beter sig som tidigare.
+
+# 4. Byggplan
+Legacykod brukar sällan ha någon sort automation kopplad till sig
+i form av en byggplan. Sätt upp en sådan miljö som gör det följande:
+
+- Kör alla enhetstester
+- Kör alla integrationstester
+- Kör alla systemtester
+- Bygger en version av din mjukvara
+- Möjlighet att deploya mjukvaran till olika miljöer så som
+test, ver, prod osv
+
+Finns detta på plats så underlättas vardagen betydligt. Feedback-loopen
+för att din utveckling blir väldigt kort och genom att trycka på
+en knapp så installeras mjukvaran i respektive miljö.
+
+# 5. Refaktorering
+När vi tittar på koden ser vi ett tydligt mönster. Koden läser  en fil,
+kör ett gäng if-satser på den och sedan sparar undan rader.
+
+Alla dessa if-satser är ju i stort sett regler på formatet i filen.
+Slutsatsen blir då att bygga en regelmotor som kan tillämpas på datat.
+
+## 5.0 Email
+En regel för validering av email. Finns i tag 5.0
+
+## 5.1 Personnummer
+En regel för validering av personnummer.
+
+## 5.2 Werido
+En regel för den knepiga regeln som ingen kommer ihåg varför den existerar.
+
+# 6. Sy ihop den nya refaktoreringen
+Tagen "chapter6" syr ihop de nya reglerna
+
+# 7. Loggning
+Ta bort all eländig System.out från mjukvara. System.out kan inte konfigureras
+och styras till filer på ett bra sätt. Byt ut till ett riktigt log ramverk
+och få en strukturerad och fin loggning av applikationen.
