@@ -73,7 +73,7 @@ sig skapa mer problem. Eftersom testerna inte är skrivna på en gång så vet d
 inte vad kraven för koden är. Att skriva testerna i efterhand ger då inget.
 
 Det som du kan göra är att sätta upp systemtester som beskrivre scenarion
-där du vet utfallet. Du vet t.ex att om du mattar in en fil av en viss typ
+där du vet utfallet. Du vet t.ex att om du matar in en fil av en viss typ
 så kommer det ut ett förväntat resultat.
 
 Dessa tester är väldigt bra att ha när du refaktoriserar koden och börjar
